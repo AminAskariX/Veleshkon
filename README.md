@@ -1,97 +1,141 @@
-# Veleshkon
-🧘‍♂️ A calming browser-based mental aid to help you escape negative thoughts, with breathing tools, relaxing music, and a dopamine-friendly game. 🌿 یک نرم‌افزار تحت‌وب آرامش‌بخش برای کمک به کاربر در هنگام هجوم افکار منفی
+<div align="center">
+
 # 🌤️ Veleshkon | ولش‌کن
 
-**✨ آرامشی برای لحظه‌های سخت ذهنی – وقتی حال‌ات خوب نیست، ولش‌کن برایت هست.**  
-**A mental refuge when your mind is under attack – Veleshkon is here for you.**
+**یک پناهگاه دیجیتال برای ذهن‌های خسته.**  
+**A peaceful web app to help shift your mind away from dark thoughts.**
+
+</div>
 
 ---
 
-## 🚀 ویژگی‌های کلیدی | Key Features
+## 📝 توضیحات فارسی (Persian Description)
 
-- 🎮 **بازی آرامش‌بخش و درگیرکننده** برای پرت کردن حواس از افکار منفی  
-  ✦ Calming and engaging game to distract from negative thoughts
+### ✨ درباره پروژه
 
-- 🧘 **تمرین تنفس با انیمیشن** برای تنظیم سیستم عصبی سمپاتیک  
-  ✦ Animated breathing exercise to calm the nervous system
-
-- 🌈 **پیام‌های انگیزشی رندوم** بر اساس اصول روانشناسی مثبت  
-  ✦ Randomized motivational messages based on positive psychology
-
-- 🎧 **پخش موسیقی ملایم در پس‌زمینه (رندوم و پیوسته)**  
-  ✦ Continuous and randomized background music to soothe the mind
-
-- 🌿 **طراحی مینیمال، روان‌شناسی‌شده و خوش‌رنگ**  
-  ✦ Soft, minimal, user-friendly and psychology-backed UI/UX
-
-- 📱 **قابلیت اجرا به عنوان اپلیکیشن وب (PWA)** – نصب و استفاده آفلاین  
-  ✦ PWA support: can be installed and used offline on mobile/desktop
+**Veleshkon** اپلیکیشنی تحت وب و آرامش‌بخش برای زمان‌هایی‌ست که افکار منفی به ذهن هجوم می‌آورند.  
+با طراحی مینیمال، موسیقی پس‌زمینه، تمرین تنفس، پیام‌های دلگرم‌کننده و یک بازی ساده اما اعتیادآور، این نرم‌افزار با اصول روانشناسی طراحی شده تا ذهن شما را از حالت اضطراب و درهم‌ریختگی به وضعیت تعادل برگرداند.
 
 ---
 
-## 🛠️ نحوه استفاده | How to Use
+### 🚀 ویژگی‌های کلیدی
 
-### 🖥️ مرورگر دسکتاپ / Desktop:
-
-1. پروژه را دانلود یا استخراج کن  
-2. فایل `index.html` را در مرورگر باز کن  
-3. از بازی، موسیقی، پیام‌ها و تمرین تنفس استفاده کن
-
-> Use the app by simply opening `index.html` in your browser
-
-### 📱 موبایل / Mobile (PWA Installation):
-
-1. پروژه را در مرورگر موبایل باز کن  
-2. دکمه `Add to Home Screen` را انتخاب کن  
-3. حالا اپ را به‌صورت مستقل اجرا کن
-
-> You can install Veleshkon as a web app and use it like a native mobile app.
+- 🎵 پخش رندوم موسیقی‌های آرامش‌بخش (آفلاین و آنلاین)
+- 🌱 تمرین تنفس همراه با انیمیشن دایره‌ای
+- 🧠 نمایش پیام‌های انگیزشی روانشناسانه و انرژی‌بخش
+- 🎮 بازی ساده، خوش‌طراحی و اعتیادآور برای منحرف کردن ذهن از افکار منفی
+- 📲 قابل اجرا در مرورگر با امکان نصب به عنوان اپلیکیشن (PWA)
+- 🧘 طراحی مبتنی بر رنگ‌های آرامش‌بخش و رفتار کاربر در حالت اضطراب
 
 ---
 
-## 💻 تکنولوژی‌های استفاده‌شده | Tech Stack
+### 🛠️ نحوه استفاده
 
-- ✅ HTML5
-- ✅ CSS3 (مبتنی بر روان‌شناسی رنگ‌ها و طراحی احساسی)
-- ✅ Vanilla JavaScript (بدون فریم‌ورک)
-- ✅ JSON for dynamic content
-- ✅ PWA (Progressive Web App)
-- ✅ UX/UI Design Based on Psychological Principles
+۱. پروژه را باز کرده یا از حالت آفلاین آن را اجرا کنید.  
+۲. از صفحه اصلی می‌توانید تمرین تنفس را انجام دهید، پیام‌های انگیزشی را بخوانید یا وارد بازی شوید.  
+۳. با بازی کردن و کلیک بر نورها، امتیاز بگیرید و پیام‌های مثبت بیشتری ببینید.
 
 ---
 
-## 📥 نصب و اجرا | Installation & Run
+### 💻 تکنولوژی‌های استفاده‌شده
 
-### ۱. اجرای مستقیم:
+- HTML5  
+- CSS3 (روانشناسی رنگ‌ها و انیمیشن)  
+- JavaScript (DOM, UX Triggers)  
+- JSON  
+- Web Manifest (PWA)  
+
+---
+
+### 📥 نصب و اجرا
+
 ```bash
-git clone https://github.com/your-username/Veleshkon.git
-cd Veleshkon
-open index.html
+
+git clone https://github.com/AminAskariX/veleshkon.git cd veleshkon open index.html (or use Live Server)
 ```
-## 👨‍💻 توسعه‌دهنده | Developer
----
-**م.امین عسکری / M.Amin Askari**  
-🌐 [aminaskarix.ir](https://aminaskarix.ir)  
-🌐 [microservice.ir](https://microservice.ir)  
-🌐 [metacortex.ir](https://metacortex.ir)
+
+برای اجرا در حالت آفلاین، کافیست فایل‌ها را دانلود کرده و مستقیماً روی مرورگر باز کنید.
 
 ---
 
-## 🤝 دعوت به همکاری | Contribute
+### 👨‍💻 توسعه‌دهنده
 
-اگر علاقه‌مند به توسعه بیشتر یا اضافه کردن ایده‌ای خلاقانه هستی، خوشحال می‌شیم همکاری کنیم 💬  
-Fork کن، Pull Request بزن یا توی Issues نظرت رو مطرح کن.
-
-> 💡 **Veleshkon welcomes ideas that bring hope and calm to others.**
-
----
-
-## 📄 مجوز | License
-
-کدها و طراحی این پروژه تحت لایسنس MIT منتشر شده.  
-*Free to use under the MIT License.*
+**م.امین عسکری**  
+- 🌐 [aminaskarix.ir](https://aminaskarix.ir)  
+- 🌐 [microservice.ir](https://microservice.ir)  
+- 🌐 [metacortex.ir](https://metacortex.ir)  
 
 ---
 
-> _"تو تنها نیستی – همین که اینجایی یعنی در مسیر بهتری."_  
-> _"You are not alone – showing up here is already a victory."_
+### 🤝 دعوت به همکاری
+
+اگر باور دارید که فناوری می‌تواند به بهبود سلامت روان کمک کند، خوشحال می‌شویم با ما همکاری کنید.  
+در بهبود نسخه بعدی Veleshkon همراه باشید ❤️
+
+---
+
+## 📝 English Description
+
+### ✨ About the Project
+
+**Veleshkon** is a lightweight, soothing web app designed to help users escape intrusive negative thoughts.  
+By combining calm music, breathwork animation, randomized motivational messages, and a minimalist dopamine-triggering game, it offers a comforting digital refuge when your mind needs rest and redirection.
+
+---
+
+### 🚀 Key Features
+
+- 🎵 Random background music (offline-friendly)
+- 🧘‍♂️ Breathing animation to calm the nervous system
+- 🌈 Motivational quotes that refresh every visit
+- 🎮 Minimal and addictive game to distract and uplift
+- 💻 Full offline support – installable as PWA
+- 🎨 Color palette based on psychological calming theory
+
+---
+
+### 🛠️ How to Use
+
+1. Launch the app in your browser or offline.
+2. Use the breathing tool, read uplifting quotes, or play the game.
+3. Click light orbs to score points and unlock good-feeling messages.
+
+---
+
+### 💻 Technologies Used
+
+- HTML5  
+- CSS3 (Color Psychology & Animation)  
+- JavaScript (DOM, UX interactions)  
+- JSON  
+- PWA Manifest  
+
+---
+
+### 📥 Installation & Run
+
+```bash
+
+git clone https://github.com/AminAskariX/veleshkon.git cd veleshkon open index.html (or use Live Server)
+```
+
+To use offline, simply download and open in any modern browser.
+
+---
+
+### 👨‍💻 Developer
+
+**M.Amin Askari**  
+- 🌐 [aminaskarix.ir](https://aminaskarix.ir)  
+- 🌐 [microservice.ir](https://microservice.ir)  
+- 🌐 [metacortex.ir](https://metacortex.ir)  
+
+---
+
+### 🤝 Join the Vision
+
+If you believe tech can support mental wellbeing, join us in making Veleshkon even better.  
+Let's build peace, one click at a time. 💖
+
+---
+
