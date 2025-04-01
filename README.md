@@ -67,27 +67,30 @@
 git clone https://github.com/your-username/Veleshkon.git
 cd Veleshkon
 open index.html
-۲. میزبانی روی سرور محلی یا هاست:
-bash
-Copy
-Edit
-# For live servers
-place files in public_html or use a local dev server
-👨‍💻 توسعه‌دهنده | Developer
-م.امین عسکری / M.Amin Askari
-🌐 aminaskarix.ir
-🌐 microservice.ir
-🌐 metacortex.ir
+## 👨‍💻 توسعه‌دهنده | Developer
+---
+**م.امین عسکری / M.Amin Askari**  
+🌐 [aminaskarix.ir](https://aminaskarix.ir)  
+🌐 [microservice.ir](https://microservice.ir)  
+🌐 [metacortex.ir](https://metacortex.ir)
 
-🤝 دعوت به همکاری | Contribute
-اگر علاقه‌مند به توسعه بیشتر یا اضافه کردن ایده‌ای خلاقانه هستی، خوشحال می‌شیم همکاری کنیم 💬
+---
+
+## 🤝 دعوت به همکاری | Contribute
+
+اگر علاقه‌مند به توسعه بیشتر یا اضافه کردن ایده‌ای خلاقانه هستی، خوشحال می‌شیم همکاری کنیم 💬  
 Fork کن، Pull Request بزن یا توی Issues نظرت رو مطرح کن.
 
-💡 Veleshkon welcomes ideas that bring hope and calm to others.
+> 💡 **Veleshkon welcomes ideas that bring hope and calm to others.**
 
-📄 مجوز | License
-کدها و طراحی این پروژه تحت لایسنس MIT منتشر شده.
-Free to use under the MIT License.
+---
 
-"تو تنها نیستی – همین که اینجایی یعنی در مسیر بهتری."
-"You are not alone – showing up here is already a victory."
+## 📄 مجوز | License
+
+کدها و طراحی این پروژه تحت لایسنس MIT منتشر شده.  
+*Free to use under the MIT License.*
+
+---
+
+> _"تو تنها نیستی – همین که اینجایی یعنی در مسیر بهتری."_  
+> _"You are not alone – showing up here is already a victory."_
