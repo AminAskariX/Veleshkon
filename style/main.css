@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
+
+:root {
+  --bg-main: #f0f9f8;
+  --bg-box: #ffffff;
+  --accent: #4fc3f7;
+  --calm-green: #a5d6a7;
+  --text-main: #37474f;
+  --radius: 1.2rem;
+  --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.04);
+
+  /* 📐 نسبت طلایی برای تایپوگرافی و فضاها */
+  --golden-font-lg: clamp(2rem, 2.618vw, 3.2rem);
+  --golden-font-md: clamp(1.2rem, 1.618vw, 2rem);
+  --golden-font-base: clamp(0.95rem, 1vw, 1.1rem);
+  --golden-font-sm: clamp(0.7rem, 0.8vw, 0.9rem);
+
+  --golden-space-lg: 3rem;
+  --golden-space-md: 2rem;
+  --golden-space-sm: 1.2rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Vazirmatn', sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+  direction: rtl;
+}
+
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  padding: var(--golden-space-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--golden-space-sm);
+  flex-grow: 1;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+header {
+  text-align: center;
+  margin-bottom: var(--golden-space-sm);
+}
+
+header h1 {
+  font-size: var(--golden-font-lg);
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: var(--golden-font-base);
+  color: #607d8b;
+  font-weight: 400;
+}
+
+.quote-marquee {
+  position: relative;
+  border-radius: var(--radius);
+  padding: var(--golden-space-sm) var(--golden-space-md);
+  background: linear-gradient(135deg, #fff8e1, #f3e5f5, #e0f7fa);
+  background-size: 400% 400%;
+  animation: gradientLCD 10s ease infinite;
+  box-shadow: var(--shadow-soft);
+  font-weight: 700;
+  font-size: var(--golden-font-base);
+  color: #4a148c;
+  font-variant: small-caps;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 90px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.quote-marquee::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  padding: 3px;
+  background: linear-gradient(to right, #ffd54f, #4fc3f7, #ffd54f);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 0;
+}
+
+.blink-gold {
+  animation: blinkGold 0.2s ease-in-out infinite;
+  color: #fbc02d !important;
+}
+
+.fade-out-msg {
+  transition: opacity 1s ease;
+  opacity: 0;
+}
+
+/* 🧘 تمرین تنفس */
+.breathing-section {
+  background-color: #e0f2f1;
+  border-radius: var(--radius);
+  padding: var(--golden-space-md);
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+}
+
+.breathing-section h2 {
+  font-size: var(--golden-font-md);
+  margin-bottom: var(--golden-space-sm);
+  color: #00796b;
+}
+
+.breathing-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--golden-space-sm);
+  flex-wrap: wrap;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  background-color: var(--calm-green);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.5s ease;
+}
+
+.circle.exhale {
+  background-color: #4fc3f7;
+}
+
+.circle span {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+#start-breathing {
+  background-color: #4db6ac;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 2rem;
+  font-size: var(--golden-font-base);
+  font-weight: bold;
+  font-family: inherit;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  animation: pulseBtn 2s ease-in-out infinite;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+#start-breathing.active {
+  background-color: #ef5350;
+}
+
+@keyframes pulseBtn {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* 🧘 تکنیک‌ها */
+.tips-section {
+  background-color: #f1f8e9;
+  padding: var(--golden-space-md);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+
+.tips-section h2 {
+  font-size: var(--golden-font-base);
+  color: #558b2f;
+  margin-bottom: var(--golden-space-sm);
+}
+
+.tips-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tips-section li {
+  margin-bottom: 0.5rem;
+  font-size: var(--golden-font-base);
+}
+
+.tips-section li::before {
+  content: "🌿 ";
+}
+
+/* 🎮 بازی */
+.game-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--golden-space-sm);
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+}
+
+.game-desc {
+
+  font-size: var(--golden-font-base);
+  line-height: 1.7;
+  color: #555;
+  text-align: justify;
+}
+
+.game-btn {
+  position: relative;
+  background-color: #ffb74d;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 2rem;
+  font-size: var(--golden-font-base);
+  font-weight: bold;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  flex: 0 0 auto;
+  overflow: hidden;
+}
+
+.game-btn::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  bottom: -3px;
+  left: -3px;
+  border-radius: 2rem;
+  background: linear-gradient(120deg, #fff176, #4fc3f7, #81c784, #fff176);
+  background-size: 300% 300%;
+  animation: glowBorder 4s linear infinite;
+  z-index: -1;
+  filter: blur(5px);
+  opacity: 0.6;
+}
+
+@keyframes glowBorder {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 📜 فوتر */
+footer {
+  text-align: center;
+  padding: var(--golden-space-sm) 0;
+  background-color: #f0f4c3;
+  font-size: var(--golden-font-sm);
+  color: #607d8b;
+  border-top: 1px solid #c5e1a5;
+}
+
+footer a {
+  color: #43a047;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* 🔴 پاپ‌آپ اضطراری */
+.emergency-popup {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(255, 235, 238, 0.95);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fade-in 0.3s ease-in;
+}
+
+.emergency-content {
+  background-color: #fff;
+  border: 3px dashed #e53935;
+  border-radius: var(--radius);
+  padding: var(--golden-space-md);
+  max-width: 90%;
+  text-align: center;
+  color: #c62828;
+  font-size: var(--golden-font-md);
+  font-weight: bold;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  animation: pulse 2s infinite;
+}
+
+#countdown {
+  font-size: var(--golden-font-lg);
+  margin-top: var(--golden-space-sm);
+  color: #b71c1c;
+}
+
+/* 🎞️ انیمیشن‌ها */
+@keyframes breathe {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.4); }
+  100% { transform: scale(1); }
+}
+
+@keyframes gradientLCD {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-out {
+  to { opacity: 0; visibility: hidden; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+@keyframes blinkGold {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+/* 📱 موبایل و تبلت */
+@media (max-width: 768px) {
+  .game-flex,
+  .breathing-flex {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .game-desc {
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+  .game-btn {
+    margin-top: 1rem;
+  }
+}
+#installBtn{
+  background: linear-gradient(135deg, #4fc3f7, #81c784);
+  color: white;
+  border: none;
+  border-radius: 3rem;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-family: 'Vazirmatn', sans-serif;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 9999;
+  transition: all 0.3s ease;
+  animation: slideFadeIn 0.6s ease forwards;
+}
+
+#installBtn:hover {
+  background: linear-gradient(135deg, #29b6f6, #66bb6a);
+}

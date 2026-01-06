@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <!-- 🔰 Favicon برای مرورگرها -->
+<link rel="icon" href="assets/icons/light.png" type="image/png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/light.png">
+<link rel="manifest" href="manifest.webmanifest">
+
+<!-- 🔎 متاهای سئو و اشتراک -->
+<meta name="description" content="Veleshkon | ولش‌کن - اپلیکیشن تحت وب برای آرام‌سازی ذهن در زمان هجوم افکار منفی، با بازی، تنفس، موسیقی و پیام‌های انرژی‌بخش.">
+<meta name="keywords" content="Veleshkon, آرامش, ذهن, اضطراب, افکار منفی, سلامت روان, dopamine, breathing, calming app">
+<meta name="author" content="م.امین عسکری | Amin Askari">
+
+<!-- 🌐 Open Graph -->
+<meta property="og:title" content="Veleshkon | ولش‌کن - آرامش روان در قالب وب‌اپ">
+<meta property="og:description" content="اپی آرامش‌بخش برای مقابله با اضطراب، با بازی نوری، پیام‌های انرژی‌بخش و تمرین تنفس.">
+<meta property="og:image" content="https://yourdomain.com/assets/og-image.webp">
+<meta property="og:url" content="https://yourdomain.com/">
+<meta property="og:type" content="website">
+
+<!-- 🐦 Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Veleshkon | ولش‌کن">
+<meta name="twitter:description" content="اپی برای آرام‌سازی ذهن، بازی نوری، پیام انگیزشی و تمرین تنفس.">
+<meta name="twitter:image" content="https://yourdomain.com/assets/og-image.webp">
+<meta http-equiv="Content-Security-Policy"
+content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; media-src 'self';">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veleshkon | ولش‌کن</title>
+  <link rel="stylesheet" href="style/main.css" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="assets/icons/light.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="container">
+      <!-- ✅ هدر خوش‌آمدگویی -->
+      <header>
+        <h1>🌤️ ولش‌کن</h1>
+        <p class="subtitle">وقتی ذهنت شلوغه، اینجا پناهگاه توئه.</p>
+      </header>
+      <button id="installBtn">📲 نصب اپلیکیشن</button>
+
+      <!-- 🔴 پاپ‌آپ هشدار اضطراری -->
+      <div id="emergency-popup" class="emergency-popup">
+        <div class="emergency-content">
+          <p>❗ اگر افکار آسیب‌زننده یا خودکشی دارید، لطفاً با اورژانس اجتماعی 123 تماس بگیرید یا از یک فرد معتمد کمک بگیرید.</p>
+          <div id="countdown">۵</div>
+        </div>
+      </div>
+
+      <!-- 💬 پیام‌های انگیزشی -->
+      <section class="quote-marquee" id="motivational-quote">
+        <div id="typing-message"></div>
+      </section>
+
+      <!-- 🧘 تمرین تنفس آرام‌کننده -->
+      <section class="breathing-section">
+        <h2>🫁 تمرین تنفس آرام‌کننده</h2>
+        <div class="breathing-flex">
+          <div class="circle" id="breathing-circle">
+            <span id="breath-text">آماده‌ای؟</span>
+          </div>
+          <button id="start-breathing">شروع تمرین تنفس</button>
+        </div>
+      </section>
+
+      <!-- 🧘‍♂️ راهکارهای فوری برای کاهش استرس -->
+      <section class="tips-section">
+        <h2>🧘‍♂️ تکنیک‌های فوری برای کاهش استرس:</h2>
+        <ul>
+          <li>نفس عمیق بکش – آرام و پیوسته</li>
+          <li>به صداهای اطرافت گوش بده</li>
+          <li>روی چیزی که در دست داری تمرکز کن</li>
+          <li>تکرار کن: "من در لحظه‌ام، من امنم"</li>
+        </ul>
+      </section>
+
+  
+
+      <!-- 🎮 بازی آرامش‌بخش -->
+      <section class="game-link">
+        <div class="game-flex">
+          <div class="game-desc">
+            🌈 وقتی افکار منفی زیاد می‌شن، با این بازی ذهن‌ات رو منحرف کن، تمرکزت رو ببر سمت نور.
+          </div>
+          <a href="game/game.html" class="game-btn">🎮 شروع بازی آرامش‌بخش</a>
+        </div>
+      </section>
+    </div>
+    <!-- 👥 مخاطبان هدف -->
+    <section class="tips-section">
+      <h2>👥 این اپلیکیشن برای چه کسانی مناسب است؟</h2>
+      <ul>
+        <li>دانش‌آموزان و دانشجویان در زمان امتحانات</li>
+        <li>افراد شاغل با مشاغل پرتنش و اضطراب آور</li>
+        <li>کسانی که با اضطراب و افکار منفی دست و پنجه نرم می‌کنند</li>
+        <li>همه افرادی که به دنبال لحظاتی از آرامش هستند</li>
+        <li>کسانی که از استرس شبکه‌های اجتماعی و FOMO رنج می‌برند</li>
+        <li>افرادی که مکرراً مورد هجوم افکار منفی قرار می‌گیرند</li>
+      </ul>
+    </section>
+    <!-- ⚖️ فوتر -->
+    <footer>
+      © 2025 ساخته شده با آرامش توسط 
+      <a href="https://github.com/AminAskariX" target="_blank">م.امین عسکری</a><br/>
+      وب‌سایت‌ها: 
+      <a href="https://aminaskarix.ir" target="_blank">aminaskarix.ir</a> | 
+      <a href="https://microservice.ir" target="_blank">microservice.ir</a> | 
+      <a href="https://metacortex.ir" target="_blank">metacortex.ir</a>
+    </footer>
+  </div>
+
+  <script src="js/app.js"></script>
+
+</body>
+
+
+</html>
+

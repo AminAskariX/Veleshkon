@@ -1,0 +1,54 @@
+{
+  "name": "ولش‌کن – پناهگاه آرامش ذهنی",
+  "short_name": "ولش‌کن",
+  "description": "🧘‍♂️ اپلیکیشن آرامش‌بخش برای لحظه‌های پرتنش – با تمرین تنفس، پیام‌های انگیزشی و بازی ساده برای پرت کردن حواس.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#e1f5fe",
+  "theme_color": "#a5d6a7",
+  "orientation": "portrait",
+  "lang": "fa",
+  "dir": "rtl",
+
+  "scope": "./",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "assets/icons/light.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/light.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/light.png",
+      "type": "image/png",
+      "sizes": "144x144",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/light.png",
+      "type": "image/png",
+      "sizes": "96x96",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/light.png",
+      "type": "image/png",
+      "sizes": "72x72",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/light.png",
+      "type": "image/png",
+      "sizes": "48x48",
+      "purpose": "any maskable"
+    }
+  ]
+}
+  

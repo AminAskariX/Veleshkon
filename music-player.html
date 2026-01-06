@@ -1,0 +1,96 @@
+<!-- فایل: music-player.html -->
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>پخش موزیک</title>
+  <style>
+    body {
+      margin: 0;
+      background: transparent;
+    }
+
+    #music-toggle {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      z-index: 9999;
+      padding: 0.7rem 1.5rem;
+      background: linear-gradient(135deg, #ef9a9a, #ce93d8);
+      color: white;
+      border: none;
+      border-radius: 2rem;
+      font-size: 1rem;
+      font-family: inherit;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    #music-toggle:hover {
+      background: linear-gradient(135deg, #f48fb1, #ba68c8);
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<audio id="bg-music" preload="auto"></audio>
+<button id="music-toggle">🔇 قطع موزیک</button>
+
+<script>
+  const musicFolder = "music/";
+  const musicTracks = [
+    "1.mp3",
+    "2.mp3",
+    "3.mp3",
+    "4.mp3",
+    "5.mp3"
+  ];
+
+  const audio = document.getElementById("bg-music");
+  const toggleBtn = document.getElementById("music-toggle");
+
+  let currentTrack = null;
+
+  // پخش آهنگ رندوم
+  function playRandomTrack() {
+    let nextTrack;
+    do {
+      nextTrack = musicTracks[Math.floor(Math.random() * musicTracks.length)];
+    } while (nextTrack === currentTrack);
+
+    currentTrack = nextTrack;
+    audio.src = musicFolder + currentTrack;
+    audio.volume = 0.4;
+    audio.play().catch((err) => {
+      console.warn("Auto-play نیاز به تعامل کاربر دارد:", err);
+    });
+  }
+
+  // بعد از اتمام هر موزیک، بعدی پخش شود
+  audio.addEventListener("ended", playRandomTrack);
+
+  // شروع اولیه
+  playRandomTrack();
+
+  // کنترل دکمه پخش / قطع
+  let isPlaying = true;
+  toggleBtn.addEventListener("click", () => {
+    if (isPlaying) {
+      audio.pause();
+      toggleBtn.textContent = "▶️ پخش موزیک";
+    } else {
+      audio.play();
+      toggleBtn.textContent = "🔇 قطع موزیک";
+    }
+    isPlaying = !isPlaying;
+  });
+</script>
+
+</body>
+</html>

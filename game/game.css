@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Vazirmatn', sans-serif;
+  background: linear-gradient(to top right, #f1f8e9, #e1f5fe);
+  color: #333;
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.game-container {
+  flex: 1 0 auto;
+  padding: 1rem;
+  max-width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #81c784;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #607d8b;
+  margin-bottom: 2rem;
+}
+
+/* 🎯 ناحیه گوی‌ها */
+.orb-zone {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background: #f9fbe7;
+  border: 2px dashed #c8e6c9;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.orb {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle at center, #ffffff, #aed581);
+  border-radius: 50%;
+  box-shadow: 0 0 12px 4px #dce775aa;
+  cursor: pointer;
+  animation: float 4s ease-in-out infinite;
+  transition: transform 0.2s ease, opacity 0.5s ease;
+}
+
+.orb:hover {
+  transform: scale(1.2);
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes pop-out {
+  0%   { transform: scale(1); opacity: 1; }
+  50%  { transform: scale(1.3); opacity: 0.8; }
+  100% { transform: scale(0.5); opacity: 0; }
+}
+
+.orb.pop {
+  animation: pop-out 0.5s forwards;
+}
+
+/* ✅ امتیاز */
+.score-panel {
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+  color: #4caf50;
+  font-weight: bold;
+}
+
+/* ✅ پیام سورپرایز */
+.message-box {
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  color: #5c6bc0;
+  background-color: #e8eaf6;
+  padding: 1.2rem;
+  border-radius: 1rem;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+  font-weight: bold;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  z-index: 10;
+}
+
+.message-box.active {
+  opacity: 1;
+}
+
+/* ✅ دکمه برگشت */
+.back-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  text-decoration: none;
+  padding: 0.6rem 1.4rem;
+  background-color: #ffb74d;
+  color: white;
+  border-radius: 1.5rem;
+  font-weight: bold;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #ffa726;
+}
+
+/* ✅ کپی‌رایت */
+footer {
+  flex-shrink: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #999;
+  background-color: #f1f8e9;
+  padding: 1rem 0;
+  border-top: 1px solid #cfd8dc;
+}
+
+footer a {
+  color: #4caf50;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ✅ نوار تنفس */
+.breath-bar-container {
+  width: 90%;
+  max-width: 600px;
+  margin: 0.5rem auto 1rem auto;
+  padding: 0.5rem;
+  background-color: #e0f7fa;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  direction: rtl;
+}
+
+.breath-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+  color: #00796b;
+}
+
+.breath-bar {
+  width: 100%;
+  height: 16px;
+  background-color: #b2dfdb;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#breath-fill {
+  width: 0%;
+  height: 100%;
+  background-color: #4db6ac;
+  transition: width 4s ease-in-out, background-color 0.3s ease;
+  border-radius: 8px;
+}
+
+/* 📱 موبایل و تبلت */
+@media (max-width: 768px) {
+
+
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .orb-zone {
+    height: 300px;
+  }
+
+  .orb {
+    width: 50px;
+    height: 50px;
+  }
+
+  .score-panel,
+  .message-box {
+    font-size: 1rem;
+  }
+
+  .back-btn {
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .orb-zone {
+    height: 280px;
+  }
+
+  .orb {
+    width: 40px;
+    height: 40px;
+  }
+
+  .message-box {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .breath-bar-container {
+    width: 95%;
+  }
+}

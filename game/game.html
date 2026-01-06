@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <!-- 🔰 Favicon برای مرورگرها -->
+<link rel="icon" href="../assets/icons/light.png" type="image/png">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/light.png">
+<link rel="manifest" href="../manifest.webmanifest">
+
+<!-- 🔎 متاهای سئو و اشتراک -->
+<meta name="description" content="Veleshkon | ولش‌کن - اپلیکیشن تحت وب برای آرام‌سازی ذهن در زمان هجوم افکار منفی، با بازی، تنفس، موسیقی و پیام‌های انرژی‌بخش.">
+<meta name="keywords" content="Veleshkon, آرامش, ذهن, اضطراب, افکار منفی, سلامت روان, dopamine, breathing, calming app">
+<meta name="author" content="م.امین عسکری | Amin Askari">
+
+<!-- 🌐 Open Graph -->
+<meta property="og:title" content="Veleshkon | ولش‌کن - آرامش روان در قالب وب‌اپ">
+<meta property="og:description" content="اپی آرامش‌بخش برای مقابله با اضطراب، با بازی نوری، پیام‌های انرژی‌بخش و تمرین تنفس.">
+<meta property="og:image" content="https://yourdomain.com/assets/og-image.webp">
+<meta property="og:url" content="https://yourdomain.com/">
+<meta property="og:type" content="website">
+
+<!-- 🐦 Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Veleshkon | ولش‌کن">
+<meta name="twitter:description" content="اپی برای آرام‌سازی ذهن، بازی نوری، پیام انگیزشی و تمرین تنفس.">
+<meta name="twitter:image" content="https://yourdomain.com/assets/og-image.webp">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+  <title>بازی نور درون | Veleshkon</title>
+  <link rel="stylesheet" href="game.css" />
+</head>
+<body>
+  <div class="game-container">
+    <header>
+      <h1>✨ نور درونت رو روشن کن</h1>
+      <p class="subtitle">با هر کلیک، ذهنت رو روشن‌تر کن. سعی کن همزمان با نشانگر زیر تنفستو تنظیم کنی.</p>
+    </header>
+    <div class="breath-bar-container">
+        <div class="breath-info">
+          <span id="breath-label">نفس بکش 🫁</span>
+          <span id="breath-count">4</span>
+        </div>
+        <div class="breath-bar">
+          <div id="breath-fill"></div>
+        </div>
+      </div>
+    <div class="orb-zone" id="orb-zone"></div>
+
+    <div class="score-panel">
+      🌟 امتیاز نور: <span id="score">0</span>
+    </div>
+
+    <div class="message-box" id="game-message"></div>
+
+    <a href="../index.html" class="back-btn">🔙 بازگشت</a>
+  </div>
+
+  
+  <!-- کپی‌رایت -->
+  <footer>
+    © 2025 ساخته شده با آرامش توسط
+    <a href="https://github.com/AminAskariX" target="_blank">م.امین عسکری</a><br/>
+    وب‌سایت‌ها:
+    <a href="https://aminaskarix.ir" target="_blank">aminaskarix.ir</a> |
+    <a href="https://microservice.ir" target="_blank">microservice.ir</a> |
+    <a href="https://metacortex.ir" target="_blank">metacortex.ir</a>
+  </footer>
+
+  <script src="game.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</body>
+</html>
