@@ -89,7 +89,7 @@ if (!localStorage.getItem('emergencyShown')) {
 
 // 🎯 بارگذاری پیام‌ها از فایل JSON یا استفاده از fallback
 function loadMessagesAndStart() {
-  fetch('../assets/messages.json')
+  fetch('assets/messages.json')
     .then(res => {
       if (!res.ok) throw new Error('فایل پیام‌ها پیدا نشد');
       return res.json();
@@ -109,11 +109,11 @@ function loadMessagesAndStart() {
 // 🎬 افکت تایپ هر پیام
 function typeMessage(message, callback) {
   let i = 0;
-  typingBox.innerHTML = '';
+  typingBox.textContent = '';
   typingBox.classList.remove('blink-gold', 'fade-out-msg');
 
   const interval = setInterval(() => {
-    typingBox.innerHTML += message.charAt(i);
+    typingBox.textContent += message.charAt(i);
     i++;
     if (i >= message.length) {
       clearInterval(interval);
@@ -159,69 +159,31 @@ function startMotivationalTyping(messagesArray) {
 
   showNext();
 }
-let deferredPrompt;
-
-// گوش دادن به رویداد beforeinstallprompt
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-
-  // دکمه نصب را نمایش بده (مثلاً دکمه‌ای با id="installBtn")
-  const installBtn = document.getElementById('installBtn');
-  if (installBtn) {
-    installBtn.style.display = 'inline-block';
-
-    installBtn.addEventListener('click', () => {
-      installBtn.style.display = 'none'; // دکمه رو مخفی کن
-      deferredPrompt.prompt();
-
-      deferredPrompt.userChoice.then((choiceResult) => {
-        if (choiceResult.outcome === 'accepted') {
-          console.log('✅ کاربر نصب را قبول کرد');
-        } else {
-          console.log('❌ کاربر نصب را رد کرد');
-        }
-        deferredPrompt = null;
-      });
-    });
-  }
-});
+let deferredPrompt = null;
+const installBtn = document.getElementById('installBtn');
+if (installBtn) {
+  installBtn.hidden = true;
+  window.addEventListener('beforeinstallprompt', event => {
+    event.preventDefault();
+    deferredPrompt = event;
+    installBtn.hidden = false;
+  });
+  installBtn.addEventListener('click', async () => {
+    if (!deferredPrompt) return;
+    const promptEvent = deferredPrompt;
+    deferredPrompt = null;
+    installBtn.hidden = true;
+    await promptEvent.prompt();
+    await promptEvent.userChoice;
+  });
+  window.addEventListener('appinstalled', () => {
+    deferredPrompt = null;
+    installBtn.hidden = true;
+  });
+}
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('service-worker.js')
-      .then(reg => console.log('Service Worker registered ✅', reg))
-      .catch(err => console.error('Service Worker error ❌', err));
+    navigator.serviceWorker.register('./service-worker.js')
+      .catch(error => console.error('Service worker registration failed:', error));
   });
 }
-// وضعیت نصب
-const installBtn = document.getElementById('installBtn');
-if (window.matchMedia('(display-mode: standalone)').matches || localStorage.getItem('pwaInstalled')) {
-  installBtn.style.display = 'none';
-}
-
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-  installBtn.style.display = 'inline-block';
-
-  installBtn.addEventListener('click', () => {
-    installBtn.style.display = 'none';
-    deferredPrompt.prompt();
-
-    deferredPrompt.userChoice.then(choice => {
-      if (choice.outcome === 'accepted') {
-        console.log('✅ نصب شد');
-        localStorage.setItem('pwaInstalled', 'true');
-      } else {
-        console.log('❌ کاربر رد کرد');
-      }
-      deferredPrompt = null;
-    });
-  });
-});
-
-// حذف دکمه پس از نصب از منوی مرورگر
-window.addEventListener('appinstalled', () => {
-  localStorage.setItem('pwaInstalled', 'true');
-  installBtn.style.display = 'none';
-});
