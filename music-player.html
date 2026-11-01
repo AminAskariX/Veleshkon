@@ -40,16 +40,13 @@
 <body>
 
 <audio id="bg-music" preload="auto"></audio>
-<button id="music-toggle">🔇 قطع موزیک</button>
+<button id="music-toggle">▶️ پخش موزیک</button>
 
 <script>
   const musicFolder = "music/";
   const musicTracks = [
-    "1.mp3",
-    "2.mp3",
-    "3.mp3",
-    "4.mp3",
-    "5.mp3"
+    "bubble-pop.mp3",
+    "game-bonus.mp3"
   ];
 
   const audio = document.getElementById("bg-music");
@@ -75,20 +72,20 @@
   // بعد از اتمام هر موزیک، بعدی پخش شود
   audio.addEventListener("ended", playRandomTrack);
 
-  // شروع اولیه
-  playRandomTrack();
 
   // کنترل دکمه پخش / قطع
-  let isPlaying = true;
+  let isPlaying = false;
   toggleBtn.addEventListener("click", () => {
     if (isPlaying) {
       audio.pause();
       toggleBtn.textContent = "▶️ پخش موزیک";
+      isPlaying = false;
     } else {
-      audio.play();
+      if (!audio.src) playRandomTrack();
+      else audio.play().catch(() => {});
       toggleBtn.textContent = "🔇 قطع موزیک";
+      isPlaying = true;
     }
-    isPlaying = !isPlaying;
   });
 </script>
 
