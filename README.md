@@ -9,7 +9,7 @@
 
 ### 🚀 امکانات
 
-- صفحهٔ اصلی، تمرین تنفس، پخش موسیقی و بازی در پوشهٔ `game/`.
+- صفحهٔ اصلی، تمرین تنفس، پخش دو فایل موسیقی موجود و بازی در پوشهٔ `game/`.
 - پیام‌های ذخیره‌شده در `assets/messages.json` با متن جایگزین در صورت خطای بارگذاری.
 - وب‌اپ قابل نصب با `manifest.webmanifest` و سرویس‌ورکر برای کش منابع.
 
@@ -19,7 +19,7 @@
 
 ### ⚠️ محدودیت فعلی
 
-پشتیبانی آفلاین به منابعی محدود است که واقعاً کش شده‌اند؛ همهٔ موسیقی‌ها در فهرست پیش‌کش قرار ندارند و صفحهٔ `offline.html` نیز در فهرست نصب سرویس‌ورکر نیست.
+سرویس‌ورکر اکنون `offline.html`، فایل‌های بازی و دو فایل موسیقی موجود را در محدودهٔ نصب برنامه پیش‌کش می‌کند. پخش موسیقی پس از کلیک کاربر آغاز می‌شود تا با محدودیت پخش خودکار مرورگر سازگار باشد. منابع خارجی مانند قلم آنلاین الزاماً آفلاین نیستند.
 
 ### 💡 تجربهٔ پیشنهادی
 
@@ -62,7 +62,7 @@ Clone `https://github.com/AminAskariX/Veleshkon.git` and serve the project from 
 
 ### ⚠️ Current limitation
 
-Offline support depends on resources that were actually cached. Music files are not all precached, and `offline.html` is absent from the service worker's installation list.
+Offline support depends on resources that were actually cached. The service worker now precaches `offline.html`, the game files, and both available audio tracks within its installation scope. Playback begins after a user click to comply with browser autoplay rules. External resources such as web fonts may still be unavailable offline.
 
 ### 💡 Intended experience
 
