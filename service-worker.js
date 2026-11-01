@@ -1,87 +1,30 @@
-const CACHE_NAME = 'veleshkon-v1';
-const ASSETS_TO_CACHE = [
-  '/',
-  '/index.html',
-  '/style/main.css',
-  '/js/app.js',
-  '/manifest.webmanifest',
-  '/assets/icons/light.png',
-  '/assets/messages.json',
-  '/game/game.html',
-  '/game/game.js',
-  '/game/game.css',
-  '/music-player.html'
+const CACHE_NAME = 'veleshkon-v2';
+const CORE = [
+  './', './index.html', './offline.html', './style/main.css', './js/app.js',
+  './manifest.webmanifest', './assets/icons/light.png', './assets/messages.json',
+  './game/game.html', './game/game.js', './game/game.css',
+  './music-player.html', './music/bubble-pop.mp3', './music/game-bonus.mp3'
 ];
-
-// نصب سرویس ورکر
-self.addEventListener('install', function(event) {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(function(cache) {
-        console.log('✅ کش باز شد');
-        return cache.addAll(ASSETS_TO_CACHE);
-      })
-      .then(() => {
-        console.log('✅ سرویس ورکر نصب شد');
-        return self.skipWaiting();
-      })
-  );
+self.addEventListener('install', event => {
+  event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(CORE)).then(() => self.skipWaiting()));
 });
-
-// فعال‌سازی سرویس ورکر
-self.addEventListener('activate', function(event) {
-  event.waitUntil(
-    caches.keys().then(function(cacheNames) {
-      return Promise.all(
-        cacheNames.map(function(cacheName) {
-          if (cacheName !== CACHE_NAME) {
-            console.log('🗑️ حذف کش قدیمی:', cacheName);
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    }).then(() => {
-      console.log('🚀 سرویس ورکر فعال شد');
-      return self.clients.claim();
-    })
-  );
+self.addEventListener('activate', event => {
+  event.waitUntil(caches.keys().then(keys =>
+    Promise.all(keys.filter(key => key.startsWith('veleshkon-') && key !== CACHE_NAME)
+      .map(key => caches.delete(key)))
+  ).then(() => self.clients.claim()));
 });
-
-// مدیریت درخواست‌ها
-self.addEventListener('fetch', function(event) {
+self.addEventListener('fetch', event => {
+  if (event.request.method !== 'GET' || new URL(event.request.url).origin !== self.location.origin) return;
   event.respondWith(
-    caches.match(event.request)
-      .then(function(response) {
-        // اگر در کش موجود باشد، از کش برمی‌گردانیم
-        if (response) {
-          return response;
-        }
-
-        // در غیر این صورت از شبکه درخواست می‌کنیم
-        return fetch(event.request).then(
-          function(response) {
-            // بررسی اعتبار پاسخ
-            if(!response || response.status !== 200 || response.type !== 'basic') {
-              return response;
-            }
-
-            // کپی کردن پاسخ برای کش
-            var responseToCache = response.clone();
-
-            caches.open(CACHE_NAME)
-              .then(function(cache) {
-                cache.put(event.request, responseToCache);
-              });
-
-            return response;
-          }
-        ).catch(function() {
-          // اگر آفلاین باشیم و فایل در کش نباشد، صفحه آفلاین را نمایش می‌دهیم
-          if (event.request.mode === 'navigate') {
-            return caches.match('/offline.html');
-          }
-        });
-      })
+    caches.match(event.request).then(cached => cached || fetch(event.request).then(response => {
+      if (response.ok && response.type === 'basic') {
+        const copy = response.clone();
+        event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy)));
+      }
+      return response;
+    }).catch(() => event.request.mode === 'navigate'
+      ? caches.match(new URL('./offline.html', self.registration.scope).href)
+      : Response.error()))
   );
 });
-  
